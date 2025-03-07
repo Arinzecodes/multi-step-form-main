@@ -133,3 +133,281 @@ subType.item(0).addEventListener("click", function(){
         subAmountsClicked.innerText = "$9/mo";
     }
 });
+
+subType.item(1).addEventListener("click", function(){
+    subType.item(0).classList.remove("sub-props");
+    subType.item(1).classList.toggle("sub-props");
+    subType.item(2).classList.remove("sub-props");
+    subClicked.innerText = "Advanced";
+    if(durationCheckBox.checked === true){
+        subAmountsClicked.innerText = "$120/yr";
+    }
+    else{
+        subAmountsClicked.innerText = "$12/mo";
+    }
+});
+
+subType.item(2).addEventListener("click", function(){
+    subType.item(0).classList.remove("sub-props");
+    subType.item(1).classList.remove("sub-props");
+    subType.item(2).classList.toggle("sub-props");
+    subClicked.innerText = "Pro";
+    if(durationCheckBox.checked === true){
+        subAmountsClicked.innerText = "$150/yr";
+    }
+    else{
+        subAmountsClicked.innerText = "$15/mo";
+    }
+});
+
+checkBox.item(0).addEventListener("change", function(){
+    addOnType.item(0).classList.toggle("sub-props");
+    if(checkBox.item(0).checked === true){
+        addOnChecked.item(0).classList.toggle("checked");
+    }
+    else{
+        addOnChecked.item(0).classList.toggle("checked");
+    }
+    if(checkBox.item(1).checked === true){
+        addOnType.item(1).classList.add("sub-props");
+    }
+    else{
+        addOnType.item(1).classList.remove("sub-props");
+    }
+    if(checkBox.item(2).checked === true){
+        addOnType.item(2).classList.add("sub-props");
+    }
+    else{
+        addOnType.item(2).classList.remove("sub-props");
+    }    
+});
+
+checkBox.item(1).addEventListener("change", function(){
+    addOnType.item(1).classList.toggle("sub-props");
+    if(checkBox.item(1).checked === true){
+        addOnChecked.item(1).classList.toggle("checked");
+    }
+    else{
+        addOnChecked.item(1).classList.toggle("checked");
+    }
+    if(checkBox.item(0).checked === true){
+        addOnType.item(0).classList.add("sub-props");
+    }
+    else{
+        addOnType.item(0).classList.remove("sub-props");
+    }
+    if(checkBox.item(2).checked === true){
+        addOnType.item(2).classList.add("sub-props");
+    }
+    else{
+        addOnType.item(2).classList.remove("sub-props");
+    } 
+});
+
+checkBox.item(2).addEventListener("change", function(){
+    addOnType.item(2).classList.toggle("sub-props");
+    if(checkBox.item(2).checked === true){
+        addOnChecked.item(2).classList.toggle("checked");
+    }
+    else{
+        addOnChecked.item(2).classList.toggle("checked");
+    }
+    if(checkBox.item(0).checked === true){
+        addOnType.item(0).classList.add("sub-props");
+    }
+    else{
+        addOnType.item(0).classList.remove("sub-props");
+    }
+    if(checkBox.item(1).checked === true){
+        addOnType.item(1).classList.add("sub-props");
+    }
+    else{
+        addOnType.item(1).classList.remove("sub-props");
+    } 
+});
+
+function calc(){
+    if(durationCheckBox.checked === true){
+        if(subClicked.innerText === "Arcade"){
+            if(checkBox.item(0).checked){
+                totalValue.innerText = "100"
+            }
+            if(checkBox.item(1).checked){
+                totalValue.innerText = "110"
+            }
+            if(checkBox.item(2).checked){
+                totalValue.innerText = "110"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked){
+                totalValue.innerText = "120"
+            }
+            if(checkBox.item(0).checked && checkBox.item(2).checked){
+                totalValue.innerText = "120"
+            }
+            if(checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "130"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "140"
+            }
+        }
+        else if(subClicked.innerText === "Advanced"){
+            if(checkBox.item(0).checked){
+                totalValue.innerText = "130"
+            }
+            if(checkBox.item(1).checked){
+                totalValue.innerText = "140"
+            }
+            if(checkBox.item(2).checked){
+                totalValue.innerText = "140"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked){
+                totalValue.innerText = "150"
+            }
+            if(checkBox.item(0).checked && checkBox.item(2).checked){
+                totalValue.innerText = "150"
+            }
+            if(checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "160"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "170"
+            }
+        }
+        else if(subClicked.innerText === "Pro"){
+            if(checkBox.item(0).checked){
+                totalValue.innerText = "160"
+            }
+            if(checkBox.item(1).checked){
+                totalValue.innerText = "170"
+            }
+            if(checkBox.item(2).checked){
+                totalValue.innerText = "170"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked){
+                totalValue.innerText = "180"
+            }
+            if(checkBox.item(0).checked && checkBox.item(2).checked){
+                totalValue.innerText = "180"
+            }
+            if(checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "190"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "200"
+            }
+        }
+    }
+    else{
+        if(subClicked.innerText === "Arcade"){
+            if(checkBox.item(0).checked){
+                totalValue.innerText = "10"
+            }
+            if(checkBox.item(1).checked){
+                totalValue.innerText = "11"
+            }
+            if(checkBox.item(2).checked){
+                totalValue.innerText = "11"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked){
+                totalValue.innerText = "12"
+            }
+            if(checkBox.item(0).checked && checkBox.item(2).checked){
+                totalValue.innerText = "12"
+            }
+            if(checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "13"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "14"
+            }
+        }
+        else if(subClicked.innerText === "Advanced"){
+            if(checkBox.item(0).checked){
+                totalValue.innerText = "13"
+            }
+            if(checkBox.item(1).checked){
+                totalValue.innerText = "14"
+            }
+            if(checkBox.item(2).checked){
+                totalValue.innerText = "14"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked){
+                totalValue.innerText = "15"
+            }
+            if(checkBox.item(0).checked && checkBox.item(2).checked){
+                totalValue.innerText = "15"
+            }
+            if(checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "16"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "17"
+            }
+        }
+        else if(subClicked.innerText === "Pro"){
+            if(checkBox.item(0).checked){
+                totalValue.innerText = "16"
+            }
+            if(checkBox.item(1).checked){
+                totalValue.innerText = "17"
+            }
+            if(checkBox.item(2).checked){
+                totalValue.innerText = "17"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked){
+                totalValue.innerText = "18"
+            }
+            if(checkBox.item(0).checked && checkBox.item(2).checked){
+                totalValue.innerText = "18"
+            }
+            if(checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "19"
+            }
+            if(checkBox.item(0).checked && checkBox.item(1).checked && checkBox.item(2).checked){
+                totalValue.innerText = "20"
+            }
+        }
+    }
+}
+
+function stepOneColor(){
+    stepOne.classList.toggle("step-color");
+    stepTwo.classList.remove("step-color");
+    stepThree.classList.remove("step-color");
+    stepFour.classList.remove("step-color");
+    subType.item(0).classList.toggle("sub-props");
+    if(checkBox.item(0).checked === true && checkBox.item(1).checked === true){
+        addOnType.item(0).classList.toggle("sub-props");
+        addOnType.item(1).classList.toggle("sub-props");
+        addOnChecked.item(0).classList.toggle("checked");
+        addOnChecked.item(1).classList.toggle("checked");
+    }
+    else{
+        addOnType.item(0).classList.toggle("sub-props");
+        addOnType.item(1).classList.toggle("sub-props");
+        addOnChecked.item(0).classList.toggle("checked");
+        addOnChecked.item(1).classList.toggle("checked");
+    }
+}
+
+function stepTwoColor(){
+    stepOne.classList.remove("step-color");
+    stepTwo.classList.toggle("step-color");
+    stepThree.classList.remove("step-color");
+    stepFour.classList.remove("step-color");
+}
+function stepThreeColor(){
+    stepOne.classList.remove("step-color");
+    stepTwo.classList.remove("step-color");
+    stepThree.classList.toggle("step-color");
+    stepFour.classList.remove("step-color");
+}
+function stepFourColor(){
+    stepOne.classList.remove("step-color");
+    stepTwo.classList.remove("step-color");
+    stepThree.classList.remove("step-color");
+    stepFour.classList.toggle("step-color");
+}
+
+window.onload = stepOneColor;
