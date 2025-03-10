@@ -46,7 +46,15 @@
               <input class="info-input" type="text" name="name" placeholder="e.g. fkngk rkgn" id="name" required oninvalid = "this.setCustomValidity('This field is required')">
             </label>
             <label for="email">Email Address
-              <input class="info-input" type="email" name="email" placeholder="e.g. arinze@gmail.com" id="email" required oninvalid = "this.setCustomValidity('This field is required')">
+              <input class="info-input" 
+              type="email" 
+              name="email" 
+              id="email" 
+              placeholder="e.g. arinze@gmail.com" 
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+              required 
+              oninvalid="this.setCustomValidity('Please enter a valid email address')" 
+              oninput="this.setCustomValidity('')">
             </label>
             <label for="tel">Phone Number
               <input class="info-input" type="tel" name="tel" placeholder="e.g. 08134567890" id="tel" required oninvalid = "this.setCustomValidity('This field is required')">

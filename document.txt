@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main container holding the sidebar and form -->
+    <div class="container">
+
+        <!-- Sidebar with navigation steps -->
+        <div class="sidebar">
+            <div class="side">
+                <div class="step-num">1</div>
+                <div class="step-detail">
+                    <span class="step">Step 1</span>
+                    <span class="detail">Your Info</span>
+                </div>
+            </div>
+            <div class="side">
+                <div class="step-num">2</div>
+                <div class="step-detail">
+                    <span class="step">Step 2</span>
+                    <span class="detail">Select Plan</span>
+                </div>
+            </div>
+            <div class="side">
+                <div class="step-num">3</div>
+                <div class="step-detail">
+                    <span class="step">Step 3</span>
+                    <span class="detail">Add-ons</span>
+                </div>
+            </div>
+            <div class="side">
+                <div class="step-num">4</div>
+                <div class="step-detail">
+                    <span class="step">Step 4</span>
+                    <span class="detail">Summary</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form section -->
+        <div class="fillings">
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" class="info-input" placeholder="Enter your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" class="info-input" placeholder="Enter your email">
+
+                <button class="next-btn">Next Step</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Attribution Footer -->
+    <div class="attribution">
+        <p>Made by <a href="#">Your Name</a></p>
+    </div>
+
+</body>
+</html>
+CSS (Documented)
+css
+Copy
+Edit
+/* Import Ubuntu font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+/* General body styles */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 5rem 10rem;
+    background-color: hsl(229, 24%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+
+/* Hide elements with mobile class (used for responsive design) */
+.mobile {
+    display: none;
+}
+
+/* Style for buttons */
+button {
+    padding: 0.4rem 1rem;
+    color: hsl(229, 24%, 87%);
+    border: 2px solid hsl(213, 96%, 18%);
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: hsl(213, 90%, 25%);
+    border-color: hsl(213, 90%, 25%);
+    color: white;
+}
+
+/* Links styling */
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s;
+}
+
+/* Link hover effect */
+a:hover {
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+
+/* Utility classes for hiding and showing elements */
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+/* Styling for steps */
+.step-color {
+    background-color: hsl(229, 24%, 87%);
+    color: black;
+    font-weight: 500;
+}
+
+/* Main container */
+.container {
+    padding: 0.8rem;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 2rem 5rem 8.3rem 2rem;
+    color: white;
+}
+
+/* Sidebar steps */
+.side {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+/* Step number inside sidebar */
+.step-num {
+    border: 2px solid white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* Form container */
+.fillings {
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Input fields */
+input {
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* Focus effect on input fields */
+.info-input:focus {
+    outline: 1px solid hsl(243, 100%, 62%);
+}
+
+/* Submit button positioning */
+.next-btn {
+    margin: 7rem 0 1rem 0;
+}
+
+/* Responsive design for screens below 900px */
+@media screen and (max-width: 900px) {
+    body {
+        margin: 5rem;
+    }
+    .sidebar {
+        padding: 2rem;
+    }
+    .next-btn {
+        margin: 0.3rem;
+    }
+}
+
+/* Responsive design for mobile screens */
+@media screen and (max-width: 560px) {
+    body {
+        margin: 0;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .container {
+        flex-direction: column;
+        background-color: hsl(229, 24%, 87%);
+        border-radius: 0;
+    }
+    .sidebar {
+        background-image: url("./assets/images/bg-sidebar-mobile.svg");
+        padding: 2rem 0 6rem 0;
+    }
+    .fillings {
+        margin: 0;
+        padding: 0;
+    }
+    .fill {
+        padding: 2rem 1rem;
+        border-radius: 10px;
+        background-color: white;
+        position: relative;
+        top: -5.5rem;
+        margin: auto 1rem;
+        box-shadow: 0px 11px 11px -3px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* Styling for attribution footer */
+.attribution {
+    margin-top: 2rem;
+    font-size: 14px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

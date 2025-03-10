@@ -410,4 +410,6 @@ function stepFourColor(){
     stepFour.classList.toggle("step-color");
 }
 
+
 window.onload = stepOneColor;
+
